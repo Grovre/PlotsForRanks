@@ -1,12 +1,16 @@
 # User-specific stuff
-.idea/
-
 *.iml
 *.ipr
 *.iws
 
 # IntelliJ
 out/
+target/classes
+target/generated-sources
+target/generated-test-sources
+target/maven-archiver
+target/maven-status
+target/test-classes
 
 # Compiled class file
 *.class
