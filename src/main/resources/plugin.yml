@@ -1,0 +1,7 @@
+name: PlotsForRanks
+version: '${project.version}'
+main: me.grovre.plotsforranks.PlotsForRanks
+api-version: 1.18
+authors: [ PoptartFromPluto ]
+description: Ranks can give town plots
+website: https://github.com/grovre
