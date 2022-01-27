@@ -8,12 +8,12 @@ public final class PlotsForRanks extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        System.out.println("\nHello world\n");
+        System.out.println("\nHello world, PlotsForRanks 0.1 loading...");
 
         getServer().getPluginManager().registerEvents(new BreakBlock(), this);
         // getServer().getPluginManager().registerEvents(new RankUp(), this);
 
-
+        System.out.println("Loading complete.\n");
     }
 
     @Override

@@ -5,3 +5,4 @@ api-version: 1.18
 authors: [ PoptartFromPluto ]
 description: Ranks can give town plots
 website: https://github.com/grovre
+depend: [Towny, Rankup]
