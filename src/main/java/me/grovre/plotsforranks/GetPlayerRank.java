@@ -11,6 +11,6 @@ import sh.okx.rankup.ranks.Rankups;
 interface GetPlayerRank extends Player {
     public static Rank getPlayerRank(Player player) {
         Plugin plugin = JavaPlugin.getPlugin(sh.okx.rankup.RankupPlugin.class);
-        RankupPlugin.getRankups() -> Rankups extends RankList;
+        
     }
 }

@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4ff1f2c-a9bd-4e03-8366-24f63eac2ff9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/GetPlayerRank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/LeaveTown.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/PlotsForRanks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/PlotsForRanks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/RankUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/RankUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/GetPlayerRank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/GetPlayerRank.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
