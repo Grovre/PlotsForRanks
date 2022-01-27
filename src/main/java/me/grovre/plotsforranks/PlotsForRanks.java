@@ -1,7 +1,7 @@
 package me.grovre.plotsforranks;
 
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import sh.okx.rankup.ranks.Rank;
 
 public final class PlotsForRanks extends JavaPlugin {
 
@@ -20,5 +20,12 @@ public final class PlotsForRanks extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         System.out.println("\n\n\nPlotsForRanks says goodbye :(\n\n\n");
+    }
+
+    public static int getPlayerBonusBlocks(Rank rank) {
+        String rankString = rank.getRank();
+        int rankValue = Integer.parseInt(rankString.substring(rankString.length()-1));
+        if(rankValue <= 0) rankValue = 10;
+        return rankValue;
     }
 }
