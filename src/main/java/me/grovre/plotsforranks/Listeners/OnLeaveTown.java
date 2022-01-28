@@ -30,6 +30,7 @@ public class OnLeaveTown implements Listener {
 
         int bonusBlockCount = PlotsForRanks.getPlayerBonusBlocks(playerRank);
         town.addBonusBlocks(bonusBlockCount * -1);
+        if(town.getBonusBlocks() < 0) town.setBonusBlocks(0);
 
     }
 }
