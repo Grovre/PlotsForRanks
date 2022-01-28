@@ -1,9 +1,10 @@
-package me.grovre.plotsforranks;
+package me.grovre.plotsforranks.Listeners;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.TownyUniverse;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
+import me.grovre.plotsforranks.PlotsForRanks;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,7 +12,7 @@ import sh.okx.rankup.events.PlayerRankupEvent;
 
 import java.util.UUID;
 
-public class RankUp implements Listener {
+public class OnRankUp implements Listener {
 
     private Player player;
     private Resident resident;
@@ -30,7 +31,7 @@ public class RankUp implements Listener {
 
         // Checks if player is in a town
         if(town == null) {
-            player.sendMessage("Town is null! See RankUp.java");
+            player.sendMessage("Town is null! See OnRankUp.java");
             player.sendMessage("Can't add bonus blocks!");
             player.sendMessage("You aren't in a town. When you join a town, your bonus blocks will be added to the town");
             return;
