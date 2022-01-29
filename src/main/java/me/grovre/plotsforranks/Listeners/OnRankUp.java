@@ -26,17 +26,18 @@ public class OnRankUp implements Listener {
         this.resident = TownyUniverse.getInstance().getResident(uuid);
         this.town = TownyAPI.getInstance().getResidentTownOrNull(resident);
 
+        // Gets a player's rank
         int rankValue = PlotsForRanks.getPlayerBonusBlocks(event.getRank().getRank());
-        player.sendMessage("Retrieved rank: " + rankValue);
+        player.sendMessage("Retrieved rank: " + rankValue); // to be removed soon
 
         // Checks if player is in a town
         if(town == null) {
-            player.sendMessage("Town is null! See OnRankUp.java");
-            player.sendMessage("Can't add bonus blocks!");
             player.sendMessage("You aren't in a town. When you join a town, your bonus blocks will be added to the town");
+            System.out.println(player.getName() + " is not in a town, will give their new town blocks once they join");
             return;
         }
 
+        // Adds an amount of bonus blocks equal to someone's rank as a number to the town
         town.addBonusBlocks(rankValue);
     }
 

@@ -7,29 +7,22 @@ import me.grovre.plotsforranks.PlotsForRanks;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import sh.okx.rankup.ranks.Rank;
-
-import java.util.UUID;
 
 public class OnJoinTown implements Listener {
 
     private Player player;
     private Resident resident;
-    private UUID uuid;
     private Town town;
-    private Rank playerRank;
 
     @EventHandler
     public void onPlayerJoinTown(TownAddResidentEvent event) {
 
         this.resident = event.getResident();
         this.player = resident.getPlayer();
-        this.uuid = player.getUniqueId();
         this.town = event.getTown();
-        this.playerRank = PlotsForRanks.getPlayerRank(player);
 
-        int bonusBlockCount = PlotsForRanks.getPlayerBonusBlocks(playerRank);
-        town.addBonusBlocks(bonusBlockCount);
+        // Adds the amount of bonus blocks to a town equal to a player's rank
+        town.addBonusBlocks(PlotsForRanks.getPlayerBonusBlocks(player));
 
     }
 }

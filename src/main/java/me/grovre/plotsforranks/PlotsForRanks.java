@@ -1,5 +1,6 @@
 package me.grovre.plotsforranks;
 
+import com.palmergames.bukkit.towny.object.Resident;
 import me.grovre.plotsforranks.Listeners.OnJoinTown;
 import me.grovre.plotsforranks.Listeners.OnLeaveTown;
 import me.grovre.plotsforranks.Listeners.OnRankUp;
@@ -34,6 +35,16 @@ public final class PlotsForRanks extends JavaPlugin {
         int rankValue = Integer.parseInt(rankString.substring(rankString.length()-1));
         if(rankValue <= 0) rankValue = 10;
         return rankValue;
+    }
+
+    public static int getPlayerBonusBlocks(Player player) {
+        Rank rank = getPlayerRank(player);
+        return getPlayerBonusBlocks(rank);
+    }
+
+    public static int getPlayerBonusBlocks(Resident resident) {
+        Player player = resident.getPlayer();
+        return getPlayerBonusBlocks(player);
     }
 
     public static Rank getPlayerRank(Player player) {

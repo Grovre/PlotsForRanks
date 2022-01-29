@@ -7,30 +7,23 @@ import me.grovre.plotsforranks.PlotsForRanks;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import sh.okx.rankup.ranks.Rank;
-
-import java.util.UUID;
 
 public class OnLeaveTown implements Listener {
 
     private Player player;
     private Resident resident;
-    private UUID uuid;
     private Town town;
-    private Rank playerRank;
 
     @EventHandler
     public void onPlayerLeaveTown(TownRemoveResidentEvent event) {
 
         this.resident = event.getResident();
         this.player = resident.getPlayer();
-        this.uuid = player.getUniqueId();
         this.town = event.getTown();
-        this.playerRank = PlotsForRanks.getPlayerRank(player);
 
-        int bonusBlockCount = PlotsForRanks.getPlayerBonusBlocks(playerRank);
-        town.addBonusBlocks(bonusBlockCount * -1);
+        // Removes the amount of bonus blocks equal to someone's rank
+        // Sets bonus blocks to 0 if bonus blocks is below 0, as a safe measure in case towny doesn't already do this
+        town.addBonusBlocks(PlotsForRanks.getPlayerBonusBlocks(player) * -1);
         if(town.getBonusBlocks() < 0) town.setBonusBlocks(0);
-
     }
 }
