@@ -28,7 +28,6 @@ public class OnRankUp implements Listener {
 
         // Gets a player's rank
         int rankValue = PlotsForRanks.getPlayerBonusBlocks(event.getRank().getRank());
-        player.sendMessage("Retrieved rank: " + rankValue); // to be removed soon
 
         // Checks if player is in a town
         if(town == null) {
