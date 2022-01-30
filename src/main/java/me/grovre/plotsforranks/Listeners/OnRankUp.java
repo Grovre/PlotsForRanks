@@ -37,7 +37,7 @@ public class OnRankUp implements Listener {
         }
 
         // Adds an amount of bonus blocks equal to someone's rank as a number to the town
-        town.addBonusBlocks(rankValue);
+        town.addBonusBlocks(1);
     }
 
 }
