@@ -5,25 +5,23 @@ import me.grovre.plotsforranks.Listeners.OnJoinTown;
 import me.grovre.plotsforranks.Listeners.OnLeaveTown;
 import me.grovre.plotsforranks.Listeners.OnRankUp;
 import me.grovre.plotsforranks.Listeners.OnServerJoin;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import sh.okx.rankup.RankupPlugin;
 import sh.okx.rankup.ranks.Rank;
+import sh.okx.rankup.ranks.RankElement;
+
+import java.util.List;
 
 public final class PlotsForRanks extends JavaPlugin {
 
     @Override
     public void onEnable() {
         // Plugin startup logic
-        System.out.println("\nHello world, PlotsForRanks loading...");
-
         getServer().getPluginManager().registerEvents(new OnJoinTown(), this);
         getServer().getPluginManager().registerEvents(new OnLeaveTown(), this);
         getServer().getPluginManager().registerEvents(new OnRankUp(), this);
         getServer().getPluginManager().registerEvents(new OnServerJoin(), this);
-
-        System.out.println("Loading complete.\n");
     }
 
     @Override
@@ -33,9 +31,16 @@ public final class PlotsForRanks extends JavaPlugin {
     }
 
     public static int getPlayerBonusBlocks(Rank rank) {
-        String rankString = rank.getRank();
-        int rankValue = Integer.parseInt(rankString.substring(rankString.length()-1));
-        if(rankValue <= 0) rankValue = 10;
+        RankupPlugin rankup = JavaPlugin.getPlugin(sh.okx.rankup.RankupPlugin.class);
+        List<RankElement<Rank>> rankList = rankup.getRankups().getTree().asList();
+        int rankValue = 1;
+        for (int i = 0; i < rankList.size(); i++) {
+            Rank rankFromList = rankList.get(i).getRank();
+            if (rankFromList == rank) {
+                rankValue = i;
+                break;
+            }
+        }
         return rankValue - 1; // Assuming everybody starts at rank 1
     }
 
@@ -50,8 +55,7 @@ public final class PlotsForRanks extends JavaPlugin {
     }
 
     public static Rank getPlayerRank(Player player) {
-        RankupPlugin plugin = (RankupPlugin) Bukkit.getPluginManager().getPlugin("Rankup");
-        if(plugin == null) player.sendMessage("RankupPlugin plugin in PlotsForRanks.java class getPlayerRank FAILED. Please contact JappaCheese or PoptartFromPluto");
+        RankupPlugin plugin = JavaPlugin.getPlugin(sh.okx.rankup.RankupPlugin.class);
         return plugin.getRankups().getRankByPlayer(player);
     }
 }

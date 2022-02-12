@@ -9,14 +9,11 @@ import org.bukkit.event.Listener;
 
 public class OnLeaveTown implements Listener {
 
-    private Player player;
-    private Town town;
-
     @EventHandler
     public void onPlayerLeaveTown(TownRemoveResidentEvent event) {
 
-        this.player = event.getResident().getPlayer();
-        this.town = event.getTown();
+        Player player = event.getResident().getPlayer();
+        Town town = event.getTown();
 
         // Removes the amount of bonus blocks equal to someone's rank
         town.addBonusBlocks(PlotsForRanks.getPlayerBonusBlocks(player) * -1);

@@ -14,17 +14,12 @@ import java.util.UUID;
 
 public class OnRankUp implements Listener {
 
-    private Player player;
-    private Resident resident;
-    private UUID uuid;
-    private Town town;
-
     @EventHandler
     public void onPlayerRankup(PlayerRankupEvent event) {
-        this.player = event.getPlayer();
-        this.uuid = player.getUniqueId();
-        this.resident = TownyUniverse.getInstance().getResident(uuid);
-        this.town = TownyAPI.getInstance().getResidentTownOrNull(resident);
+        Player player = event.getPlayer();
+        UUID uuid = player.getUniqueId();
+        Resident resident = TownyUniverse.getInstance().getResident(uuid);
+        Town town = TownyAPI.getInstance().getResidentTownOrNull(resident);
 
         // Gets a player's rank
         int rankValue = PlotsForRanks.getPlayerBonusBlocks(event.getRank().getRank());

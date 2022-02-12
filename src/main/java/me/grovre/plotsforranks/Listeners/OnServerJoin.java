@@ -13,17 +13,14 @@ import java.util.List;
 
 public class OnServerJoin implements Listener {
 
-    private Player player;
-    private Resident resident;
-    private Town town;
-    private List<Resident> townResidents;
 
     @EventHandler
     public void OnPlayerJoin(PlayerJoinEvent event) {
-        this.player = event.getPlayer();
-        this.resident = TownyAPI.getInstance().getResident(player);
-        this.town = TownyAPI.getInstance().getResidentTownOrNull(resident);
-        if( town != null) this.townResidents = town.getResidents();
+        Player player = event.getPlayer();
+        Resident resident = TownyAPI.getInstance().getResident(player);
+        Town town = TownyAPI.getInstance().getResidentTownOrNull(resident);
+        List<Resident> townResidents = null;
+        if( town != null) townResidents = town.getResidents();
 
         // Gatekeeper
         if(!player.hasPlayedBefore()) return;
