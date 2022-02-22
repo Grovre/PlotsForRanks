@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4ff1f2c-a9bd-4e03-8366-24f63eac2ff9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_1_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_1_R0_1_SNAPSHOT.xml" afterDir="false" />
+    <list default="true" id="a4ff1f2c-a9bd-4e03-8366-24f63eac2ff9" name="Changes" comment="correctly instantiate rankup plugin">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/Keys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/Listeners/OnJoinTown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/Listeners/OnJoinTown.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/Listeners/OnLeaveTown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/Listeners/OnLeaveTown.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/Listeners/OnRankUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/Listeners/OnRankUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/Listeners/OnServerJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/Listeners/OnServerJoin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/PlotsForRanks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/grovre/plotsforranks/PlotsForRanks.java" afterDir="false" />
     </list>
@@ -147,6 +143,14 @@
       <option name="presentableId" value="Default" />
       <updated>1643217320569</updated>
     </task>
+    <task id="LOCAL-00001" summary="correctly instantiate rankup plugin">
+      <created>1644656653768</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644656653769</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,6 +169,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="correctly instantiate rankup plugin" />
+    <option name="LAST_COMMIT_MESSAGE" value="correctly instantiate rankup plugin" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
